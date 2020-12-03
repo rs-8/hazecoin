@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "It's like \"basecoin\" but hazecoin",
   "scripts": {
-    "start": "tsc && node main.js"
+    "start": "tsc && node dist/main.js"
   },
   "keywords": [
     "cryptocurrency",
