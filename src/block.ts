@@ -1,4 +1,5 @@
 import * as CryptoJS from 'crypto-js';
+import { genesisBlock } from './genesis';
 
 export class Block {
     private index: number;
@@ -35,6 +36,10 @@ export class Block {
         if (prev.hash !== next.prevHash) return false;
         if (Block.generateHash(next.index, next.prevHash, next.timestamp, next.data) !== next.hash) return false;
         return true;
+    }
+
+    isGenesis() {
+        return JSON.stringify(this) === JSON.stringify(genesisBlock);
     }
 
     setData(data: string) {
